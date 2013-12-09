@@ -21,9 +21,7 @@
 #include "mls.h"
 #include "mls_lang.h"
 #include "mls_stat.h"
-
-// because we must specify it when 2dimensional array is passed to function
-#define SNUMB_LEN	4
+#include "mls_text.h"
 
 extern int lang;
 extern int graph;
