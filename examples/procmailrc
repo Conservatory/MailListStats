@@ -1,0 +1,14 @@
+# example of running MLS from .procmailrc (or side-wide procmailrc)
+
+# run mls for mailing list named MOBiL
+# (search in headers, carbon copy, use "mls_lock".$LOCKEXT as local lock-file)
+# update cache file for actual month, actual year and aggregate...
+:0 Hc:mls_lock
+* ^Sender: mobil-admin@mobil.sk
+|~/usr/local/bin/mls -q -u /home/marki/mobil-whole.cache
+|~/usr/local/bin/mls -q -u /home/marki/mobil-`date +'%Y'`.cache
+|~/usr/local/bin/mls -q -u /home/marki/mobil-`date +'%Y-%m'`.cache
+
+# ...
+# your usual recipes
+# ...

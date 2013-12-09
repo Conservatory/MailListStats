@@ -1,0 +1,57 @@
+/****************************************************************************
+    MailListStat - print useful statistics on email messages
+    Copyright (C) 2001-2003  Marek Podmaka <marki@nexin.sk>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ ****************************************************************************/
+
+ How to compile
+~~~~~~~~~~~~~~~~
+* Under Linux you should have no problems, just run
+    make           -- will compile the sources
+    make install   -- will install binary and man page
+  in the directory with source files. You may want to change something in
+  Makefile. By default, it's optimised using -O3, but you can change it.
+  Default install dir is /usr/local/bin/ for binary and /usr/local/man/man1
+  for man page.
+  Other targets are:
+    make clean     -- will remove files created during compilation
+    make uninstall -- will remove installed binary and man page
+
+* Windows
+  You can just download the pre-compiled version, which should be OK for you.
+  It's significantly slower, but it's issue of DJGPP.
+  With DJGPP installed, you should have no problems with compilation, just
+  edit Makefile and change name of target file to "mls.exe", so that DJGPP
+  will know you want to produce normal executable file. But as I noticed,
+  it is not necessary with recent version of DJGPP, so do it only if it doesn't
+  work without it.
+
+* PHP wrapper - see file README
+* Examples    - see dir  examples/
+
+ How to add another language
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* You can just translate everything in mls_lang.h and send it to me and I will
+  include it in next release.
+
+* Or can add another language as specified in mls_lang.h, but you will need to
+  change also mls.c
+  * add line for your language to parameters-parsing switch(c) - it's at the
+    beginning of main()
+
+* Sorry for such a bad implementation, but I have no time to learn gettext()
+  and it has disadvantage that it needs specials files to be located somewhere.
+/****************************************************************************/

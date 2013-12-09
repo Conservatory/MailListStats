@@ -1,0 +1,111 @@
+/****************************************************************************
+    MailListStat - print useful statistics on email messages
+    Copyright (C) 2001-2003  Marek Podmaka <marki@nexin.sk>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ ****************************************************************************/
+
+1.3   + Portugues Brasil translation
+      + added detection of some more email and news clients
+      + updating cache file now possible (to run mls from .forward for example)
+      + quiet mode (-q) - will print only errors (to stderr)
+      + new graph - msgs written during months of year
+      + new command-line option (-g) to specify which graphs to show
+      + some examples of usage in "examples/" subdir
+      * new translatable strings - Subject, Percent, Mailer
+      * some code beautification (added some constants, comments, ...)
+      * fixed bug in mailer detection (problem with Message-ID after X-Mailer)
+      * format of cache files changed (you have to re-create them!)
+
+1.2.2 + Serbian translation (iso-8859-2)
+      + new command-line option -T to specify title (then only this will be
+        printed as title thus omiting oldest & newest msg date)
+      * optimized PHP wrapper, will use preg instead of ereg, if possible
+      * mailers are also recognized in X-Newsreader header
+      * added workaround to detect Pine mailer (search in Message-ID header)
+      * some changes in regex's - better detection of "Re:"s in subject and
+        mailer identification; changes won't show up in old cache files, you
+	should re-generate them using this version of mls
+
+1.2.1 * fixed bug in PHP wrapper causing incomplete output
+
+1.2   + HTML output
+      + PHP wrapper
+
+1.1   + TOP table of used email clients (mailers)
+      + TOP table of authors by total/average size of their messages
+      + cache file support
+      * source code beautification and optimization
+      * Spanish translation now in iso-8859-1 charset
+      * changes in French translation
+
+1.0.3 + added Spanish language (by Luis Llorente)
+
+1.0.2 * fixed bug when input was not ending with newline
+
+1.0.1 + added man page
+      + added German & French languages (by Albert Marencin)
+
+1.0   + added support for MIME-encoded headers (mainly subject)
+      * fixed invalid reporting of oldest message, because of presence of
+        special folder-data message with "DON'T DELETE THIS MESSAGE -- FOLDER
+	INTERNAL DATA" subject
+      * code cleanup
+
+0.8.1 + Italian language support (by Fabio Ferrero <ferrero@interim.it>)
+      * increased buffer sizes, so it should run faster (at least under Win)
+
+0.8   + option to specify how many TOP items to show (e.g. TOP 25 or TOP 5)
+      + will print date of oldest & newest message
+      + TOP table of quoting
+      * changed default language to English
+      * changed title text configuration (see README)
+      * under Windows, consumed CPU time won't be printed (DJGPP doesn't
+        support it)
+
+0.7   + will show elapsed execution time, consumed CPU time
+      + verbose mode
+      * cleaned sources - less Slovak variables and comments
+      * fixed some lang issues in output
+
+0.6   * fixed email address recognition (now uses regex)
+
+0.5   + added another graph - msgs written during days of week (Mon - Sun)
+
+0.4   + added 2 graphs! (no. of msgs written in hours 0-23 and days 1-31)
+
+0.3   + rewritten using regex; now supports counted Re lines in subject "Re[2]: bla"
+
+0.2   + stat: +TOP10 authors and subjects, avg msg size
+
+0.1   * it works; need to implement more stats
+
+0.0.4 * stats works well (only best quote,size + total number, size)
+
+0.0.3 * +recognition of author's email address
+
+0.0.2 * recognising message header, body; counting messages, body bytes
+
+0.0.1 * parsing options, reading input file, counting bytes
+
+
+
+BUGS/TODO
+~~~~~~~~~
+* doesn't support header fields splitted to more lines
+  (you can use formail(1) to put them to one line before using MLS)
+* charset conversion in MIME-decoding
+* more stats
+* file locking

@@ -1,0 +1,12 @@
+This directory contains some examples on how to use MailListStat.
+
+File            Description
+~~~~            ~~~~~~~~~~~
+example.php     Simple example showing usage of PHP wrapper class
+forward         Running MLS from your .forward file
+procmailrc      Example of integration MLS with procmail
+
+If you have integrated MailListStat with other software (like mailing list
+managers) and would like to contribute, please send all your modifications,
+config files, etc. to marki@nexin.sk
+THANKS.

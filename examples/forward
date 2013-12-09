@@ -1,0 +1,16 @@
+# .forward example
+#
+# it will make stats from all received email, so probably you will need
+# dedicated account or use procmail/maildrop.
+#
+#
+# first, deliver all mail as usual - specify your login_name
+your_login
+# now run MLS
+# we can update several cache files here...
+# first, aggregate stats
+"|/usr/local/bin/mls -q -u /home/marki/list-whole.cache"
+# stats for actual month (to file list-year-month.cache)
+"|/usr/local/bin/mls -q -u /home/marki/list-`/bin/date +'%Y-%m'`.cache"
+# stats for actual month (to file list-year.cache)
+"|/usr/local/bin/mls -q -u /home/marki/list-`/bin/date +'%Y'`.cache"
